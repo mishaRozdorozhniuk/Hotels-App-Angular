@@ -1,0 +1,13 @@
+<main class="container">
+  <div class="hotels-wrapper">
+    <div *ngFor="let hotel of hotelService.hotels">
+      <div routerLink="/hotels/{{hotel.id}}" class="hotel">
+        <img class="hotel-img" src='{{hotel.urlAddress}}' alt="hotel img">
+        <p class="hotel-name">{{hotel.name}}</p>
+        <p>Address: {{hotel.address}}</p>
+        <p>Contact Number: {{hotel.contactNumber}}</p>
+        <span>Email: {{hotel.mail}}</span>
+      </div>
+    </div>
+  </div>
+</main>

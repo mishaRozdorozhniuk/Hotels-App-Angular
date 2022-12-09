@@ -4,9 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {LoginComponent} from "../components/login/login.component";
 import {FormsModule} from "@angular/forms";
-import {HomeComponent} from "../components/home/home.component";
+import {HomeComponent} from "../pages/home/home.component";
 import {HeaderComponent} from "../components/header/header.component";
 import {SignUpComponent} from "../components/sign-up/sign-up.component";
+import { HotelPlacesComponent } from '../components/hotel-places/hotel-places.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {SignUpComponent} from "../components/sign-up/sign-up.component";
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    SignUpComponent
+    SignUpComponent,
+    HotelPlacesComponent
   ],
   imports: [
     BrowserModule,
