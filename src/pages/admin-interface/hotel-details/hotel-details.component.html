@@ -1,0 +1,45 @@
+<input class="edit-hotel-input" type="text"
+       *ngIf="isItemEdit"
+       [(ngModel)]="hotel.name"
+       [ngModelOptions]="{standalone: true}"
+       value={{hotel.name}}>
+<span *ngIf="!isItemEdit" class="hotels-info hotels-info-name">{{hotel.name}}</span>
+<input class="edit-hotel-input" type="text"
+       *ngIf="isItemEdit"
+       [(ngModel)]="hotel.contactNumber"
+       [ngModelOptions]="{standalone: true}"
+       value={{hotel.contactNumber}}>
+<span *ngIf="!isItemEdit" class="hotels-info"><b>Contact Number: </b>{{hotel.contactNumber}}</span>
+<input class="edit-hotel-input" type="text"
+       *ngIf="isItemEdit"
+       [(ngModel)]="hotel.mail"
+       [ngModelOptions]="{standalone: true}"
+       value={{hotel.mail}}>
+<span *ngIf="!isItemEdit" class="hotels-info"><b>Mail: </b>{{hotel.mail}}</span>
+<input class="edit-hotel-input" type="text"
+       *ngIf="isItemEdit"
+       [(ngModel)]="hotel.address"
+       [ngModelOptions]="{standalone: true}"
+       value={{hotel.address}}>
+<span *ngIf="!isItemEdit" class="hotels-info"><b>Address: </b>{{hotel.address}}</span>
+<input class="edit-hotel-input" type="text"
+       *ngIf="isItemEdit"
+       [(ngModel)]="hotel.hotelStatus"
+       [ngModelOptions]="{standalone: true}"
+       value={{hotel.hotelStatus}}>
+<span *ngIf="!isItemEdit" class="hotels-info"><b>Hotel Status: </b>{{hotel.hotelStatus}}</span>
+<input class="edit-hotel-input" type="text"
+       *ngIf="isItemEdit"
+       [(ngModel)]="hotel.postalOffice.name"
+       [ngModelOptions]="{standalone: true}"
+       value={{hotel.postalOffice.name}}>
+<span *ngIf="!isItemEdit" class="hotels-info"><b>Postal Office Name: </b>{{hotel.postalOffice.name}}</span>
+<input class="edit-hotel-input" type="text"
+       *ngIf="isItemEdit"
+       [(ngModel)]="hotel.postalOffice.postCode"
+       [ngModelOptions]="{standalone: true}"
+       value={{hotel.postalOffice.postCode}}>
+<span *ngIf="!isItemEdit" class="hotels-info"><b>Postal Office Post Code: </b>{{hotel.postalOffice.postCode}}</span>
+
+<button *ngIf="!isItemEdit" class="edit-hotel" (click)="editItem()">Edit</button>
+<button *ngIf="isItemEdit" class="save-hotel" (click)="saveItem()">Save</button>

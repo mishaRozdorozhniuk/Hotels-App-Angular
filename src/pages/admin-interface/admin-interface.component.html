@@ -1,0 +1,6 @@
+<div class="container">
+  <button (click)="handleElementsCheck()" class="check-elements">Check my elements</button>
+  <div class="admin-wrapper">
+    <app-hotel-details *ngFor="let hotel of hotelsWithOwners" [hotel]="hotel"></app-hotel-details>
+  </div>
+</div>

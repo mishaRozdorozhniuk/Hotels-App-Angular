@@ -1,7 +1,20 @@
 <header>
-  <a routerLink="hotels" class="logo">CompanyLogo</a>
-  <div class="header-right">
-    <a routerLink="/login">Log In</a>
-    <a routerLink="/signup">Sign Up</a>
+  <div class="header-inner">
+    <a routerLink="hotels" class="logo">CompanyLogo</a>
+    <ng-container *ngIf="!registration.userIsAuth">
+      <div class="header-right">
+        <a routerLink="/login">Log In</a>
+        <a routerLink="/signup">Sign Up</a>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="registration.signUpUser.isAuth">
+      <span class="header-username">{{registration.signUpUser.displayName}}</span>
+    </ng-container>
+    <ng-container *ngIf="registration.admin.isAuth">
+      <div class="header-admin">
+        <span class="header-username">{{registration.admin.displayName}}</span>
+        <a class="admin-interface" routerLink="/adminInterface">Admin Panel</a>
+      </div>
+    </ng-container>
   </div>
 </header>

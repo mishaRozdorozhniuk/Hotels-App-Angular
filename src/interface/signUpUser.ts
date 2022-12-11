@@ -1,5 +1,6 @@
 export interface ISignUpUser {
   displayName: string
   email: string,
-  password: string
+  password: string,
+  isAuth?: boolean
 }

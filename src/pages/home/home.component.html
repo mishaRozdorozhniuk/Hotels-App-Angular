@@ -4,9 +4,11 @@
       <div routerLink="/hotels/{{hotel.id}}" class="hotel">
         <img class="hotel-img" src='{{hotel.urlAddress}}' alt="hotel img">
         <p class="hotel-name">{{hotel.name}}</p>
-        <p>Address: {{hotel.address}}</p>
-        <p>Contact Number: {{hotel.contactNumber}}</p>
-        <span>Email: {{hotel.mail}}</span>
+        <strong>Postal Office:</strong><span class="hotel-info">{{hotel.postalOffice.postCode}}</span>
+        <p class="hotel-info"><strong>Hotel Status:</strong> {{hotel.hotelStatus}}</p>
+        <p class="hotel-info"><strong>Address:</strong> {{hotel.address}}</p>
+        <p class="hotel-info"><strong>Contact Number:</strong> {{hotel.contactNumber}}</p>
+        <p class="hotel-info"><strong>Email:</strong> {{hotel.mail}}</p>
       </div>
     </div>
   </div>

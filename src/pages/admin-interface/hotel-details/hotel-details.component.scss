@@ -1,0 +1,49 @@
+* {
+  font-family: sans-serif;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px auto;
+  max-width: 400px;
+}
+
+.edit-hotel,
+.save-hotel {
+  background-color: #008842;
+  padding: 8px 14px;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-hotel {
+  background-color: #3793ff;
+}
+
+.hotels-info-name {
+  font-size: 18px;
+  color: #3793ff;
+  font-weight: bold;
+}
+
+.hotels-info {
+  display: flex;
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
+
+b {
+  margin-right: 5px;
+}
+
+.edit-hotel-input {
+  padding: 8px 26px 8px 10px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}

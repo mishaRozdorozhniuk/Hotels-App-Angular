@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ISignUpUser} from "../../interface/signUpUser";
+import {Router} from "@angular/router";
+import {RegistrationService} from "../../services/registration.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -7,19 +9,27 @@ import {ISignUpUser} from "../../interface/signUpUser";
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-  signUpUser: ISignUpUser = {
-    displayName: '',
-    email: '',
-    password: ''
+  constructor(private router: Router, public registration: RegistrationService) {
   }
-
-  constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(signUpData: ISignUpUser){
-    this.signUpUser = signUpData
-    console.log(this.signUpUser)
+  onSubmit(signUpData: ISignUpUser): any {
+    if (this.registration.signUpUser.displayName === signUpData.displayName
+      && this.registration.signUpUser.email === signUpData.email
+      && this.registration.signUpUser.password === signUpData.password) {
+      this.router.navigate(['hotels'])
+      this.registration.signUpUser.isAuth = true
+      this.registration.userIsAuth = true
+    } else if (this.registration.admin.displayName === signUpData.displayName
+      && this.registration.admin.email === signUpData.email
+      && this.registration.admin.password === signUpData.password) {
+      this.router.navigate(['hotels'])
+      this.registration.admin.isAuth = true
+      this.registration.userIsAuth = true
+    } else {
+      return false
+    }
   }
 }

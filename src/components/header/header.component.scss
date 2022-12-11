@@ -1,4 +1,6 @@
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -10,6 +12,12 @@ header {
   background-color: #f1f1f1;
   padding: 20px 10px;
   font-family: sans-serif;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 header a {
@@ -47,4 +55,24 @@ header a.logo {
   .header-right {
     float: none;
   }
+}
+
+.header-username {
+  font-size: 19px;
+  margin-top: 12px;
+  float: right;
+}
+
+.admin-interface {
+  background-color: #4080ff;
+  padding: 5px;
+  color: #fff !important;
+}
+
+.header-admin {
+  max-width: 200px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-left: auto;
 }
