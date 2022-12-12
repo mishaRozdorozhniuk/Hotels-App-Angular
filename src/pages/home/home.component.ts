@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HotelsService} from "../../services/hotels.service";
 
 @Component({
@@ -7,9 +7,10 @@ import {HotelsService} from "../../services/hotels.service";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(public hotelService: HotelsService) { }
+  constructor(public hotelService: HotelsService) {
+  }
 
   ngOnInit(): void {
-
+    console.log('home')
   }
 }

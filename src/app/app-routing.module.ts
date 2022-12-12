@@ -7,11 +7,12 @@ import {HotelPlacesComponent} from "../components/hotel-places/hotel-places.comp
 import {AdminInterfaceComponent} from "../pages/admin-interface/admin-interface.component";
 
 const routes: Routes = [
-  {path: 'hotels', component: HomeComponent},
+  {path: '', redirectTo: "hotels", pathMatch: "full"},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignUpComponent},
-  {path: 'hotels/:id', component: HotelPlacesComponent},
   {path: 'adminInterface', component: AdminInterfaceComponent},
+  {path: 'hotels', component: HomeComponent},
+  {path: 'hotels/:id', component: HotelPlacesComponent}
 ];
 
 @NgModule({

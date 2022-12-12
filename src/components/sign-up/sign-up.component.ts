@@ -13,6 +13,7 @@ export class SignUpComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('signup')
   }
 
   onSubmit(signUpData: ISignUpUser): any {
@@ -22,12 +23,14 @@ export class SignUpComponent implements OnInit {
       this.router.navigate(['hotels'])
       this.registration.signUpUser.isAuth = true
       this.registration.userIsAuth = true
+      // localStorage.setItem('user', JSON.stringify(signUpData))
     } else if (this.registration.admin.displayName === signUpData.displayName
       && this.registration.admin.email === signUpData.email
       && this.registration.admin.password === signUpData.password) {
       this.router.navigate(['hotels'])
       this.registration.admin.isAuth = true
       this.registration.userIsAuth = true
+      // localStorage.setItem('user', JSON.stringify(signUpData))
     } else {
       return false
     }

@@ -40,6 +40,5 @@
        [ngModelOptions]="{standalone: true}"
        value={{hotel.postalOffice.postCode}}>
 <span *ngIf="!isItemEdit" class="hotels-info"><b>Postal Office Post Code: </b>{{hotel.postalOffice.postCode}}</span>
-
 <button *ngIf="!isItemEdit" class="edit-hotel" (click)="editItem()">Edit</button>
 <button *ngIf="isItemEdit" class="save-hotel" (click)="saveItem()">Save</button>

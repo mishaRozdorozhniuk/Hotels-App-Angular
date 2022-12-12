@@ -7,11 +7,14 @@ import {RegistrationService} from "../../services/registration.service";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  // userIsAuth = false
 
   constructor(public registration: RegistrationService) {
   }
 
   ngOnInit(): void {
+    // if (localStorage.getItem('user') !== null) {
+    //   this.userIsAuth = true
+    // }
   }
-
 }

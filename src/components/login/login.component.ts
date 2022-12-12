@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('login')
   }
 
   onSubmit(loginData: IUser) {
