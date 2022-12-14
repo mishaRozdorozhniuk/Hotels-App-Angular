@@ -70,9 +70,19 @@ header a.logo {
 }
 
 .header-admin {
-  max-width: 200px;
+  max-width: 300px;
   display: flex;
   align-items: stretch;
   justify-content: space-between;
   margin-left: auto;
+}
+
+.log-out {
+  border: none;
+  background-color: #ff3b3b;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: #fff !important;
+  font-size: 18px;
+  cursor: pointer;
 }

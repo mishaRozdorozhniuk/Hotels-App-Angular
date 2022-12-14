@@ -8,18 +8,16 @@ import {IHotel} from "../../interface/hotel";
   styleUrls: ['./admin-interface.component.scss']
 })
 export class AdminInterfaceComponent implements OnInit {
-  hotelsCopy = this.hotelService.hotels.splice(0)
   hotelsWithOwners: IHotel[] = []
 
   constructor(private hotelService: HotelsService) {
   }
 
   ngOnInit(): void {
-    console.log('admin')
   }
 
   handleElementsCheck() {
-    this.hotelsCopy.map(hotel => {
+    this.hotelService.hotels.map(hotel => {
       hotel.hasOwnProperty('hotelOwner') && this.hotelsWithOwners.push(hotel)
     })
   }

@@ -1,3 +1,9 @@
+<img *ngIf="!isItemEdit" class="hotel-img" src="{{hotel.urlAddress}}" alt="hotel-img">
+<input class="edit-hotel-input" type="text"
+       *ngIf="isItemEdit"
+       [(ngModel)]="hotel.urlAddress"
+       [ngModelOptions]="{standalone: true}"
+       value={{hotel.urlAddress}}>
 <input class="edit-hotel-input" type="text"
        *ngIf="isItemEdit"
        [(ngModel)]="hotel.name"
@@ -40,5 +46,14 @@
        [ngModelOptions]="{standalone: true}"
        value={{hotel.postalOffice.postCode}}>
 <span *ngIf="!isItemEdit" class="hotels-info"><b>Postal Office Post Code: </b>{{hotel.postalOffice.postCode}}</span>
-<button *ngIf="!isItemEdit" class="edit-hotel" (click)="editItem()">Edit</button>
-<button *ngIf="isItemEdit" class="save-hotel" (click)="saveItem()">Save</button>
+<button *ngIf="!isItemEdit" class="edit-hotel" (click)="editItem()">Edit Hotel</button>
+<button *ngIf="isItemEdit" class="save-hotel" (click)="saveItem()">Save Hotel</button>
+<button class="show-related-rooms" (click)="handleShowRelatedRooms()">Show related rooms</button>
+
+<ng-container *ngIf="showRelatedRooms">
+  <app-room-details [hotel]="hotel"
+                    [deleteRoom]="deleteRoom"
+                    [saveRoom]="saveRoom"
+                    [editRoom]="editRoom"></app-room-details>
+</ng-container>
+

@@ -1,0 +1,31 @@
+<div class="rooms-wrapper" *ngFor="let room of hotel.hotelPlaces">
+  <input class="edit-hotel-input" type="text"
+         *ngIf="room.isEdit"
+         [(ngModel)]="room.url"
+         [ngModelOptions]="{standalone: true}"
+         value={{room.url}}>
+  <img *ngIf="!room.isEdit" class="room-img" src="{{room.url}}" alt="hotel-img">
+  <input class="edit-hotel-input" type="text"
+         *ngIf="room.isEdit"
+         [(ngModel)]="room.name"
+         [ngModelOptions]="{standalone: true}"
+         value={{room.name}}>
+  <span class="hotel-rooms" *ngIf="!room.isEdit"><b>Name: </b>{{room.name}}</span>
+  <input class="edit-hotel-input" type="text"
+         *ngIf="room.isEdit"
+         [(ngModel)]="room.numberOfBeds"
+         [ngModelOptions]="{standalone: true}"
+         value={{room.numberOfBeds}}>
+  <span class="hotel-rooms" *ngIf="!room.isEdit"><b>numberOfBeds: </b>{{room.numberOfBeds}}</span>
+  <input class="edit-hotel-input" type="text"
+         *ngIf="room.isEdit"
+         [(ngModel)]="room.price"
+         [ngModelOptions]="{standalone: true}"
+         value={{room.price}}>
+  <span class="hotel-rooms" *ngIf="!room.isEdit"><b>Price: </b>{{room.price}}</span>
+  <div class="room-buttons">
+    <button *ngIf="!room.isEdit" class="edit-hotel" (click)="editRoom(room.id)">Edit</button>
+    <button *ngIf="room.isEdit" class="save-hotel" (click)="saveRoom(room.id)">Save</button>
+    <button class="delete-hotel" (click)="deleteRoom(hotel.hotelPlaces, room.id)">Delete</button>
+  </div>
+</div>

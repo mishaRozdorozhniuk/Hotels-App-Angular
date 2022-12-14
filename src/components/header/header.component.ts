@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RegistrationService} from "../../services/registration.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -7,14 +8,18 @@ import {RegistrationService} from "../../services/registration.service";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  // userIsAuth = false
-
-  constructor(public registration: RegistrationService) {
+  constructor(public registration: RegistrationService, public route: Router) {
   }
 
   ngOnInit(): void {
-    // if (localStorage.getItem('user') !== null) {
-    //   this.userIsAuth = true
-    // }
+    if (localStorage.getItem('user') !== null) {
+      this.registration.userIsAuth = true
+    }
+  }
+
+  logOut() {
+    localStorage.removeItem('user')
+    this.route.navigate(['signup'])
+    this.registration.userIsAuth = false
   }
 }

@@ -1,20 +1,21 @@
 <header>
   <div class="header-inner">
+    <a routerLink="/hotels">Home</a>
     <ng-container *ngIf="!registration.userIsAuth">
       <div class="header-right">
-        <a routerLink="/hotels">Home</a>
         <a routerLink="/login">Log In</a>
         <a routerLink="/signup">Sign Up</a>
-        <a routerLink="/adminInterface" class="admin-interface">Admin Panel</a>
       </div>
     </ng-container>
-    <ng-container *ngIf="registration.signUpUser.isAuth">
+    <ng-container *ngIf="registration.signUpUser.isAuth && registration.userIsAuth">
       <span class="header-username">{{registration.signUpUser.displayName}}</span>
+      <button (click)="logOut()">Log Out</button>
     </ng-container>
-    <ng-container *ngIf="registration.admin.isAuth">
+    <ng-container *ngIf="registration.admin.isAuth && registration.userIsAuth">
       <div class="header-admin">
         <span class="header-username">{{registration.admin.displayName}}</span>
-        <button>Log Out</button>
+        <a routerLink="/adminInterface" class="admin-interface">Admin Panel</a>
+        <button class="log-out" (click)="logOut()">Log Out</button>
       </div>
     </ng-container>
   </div>

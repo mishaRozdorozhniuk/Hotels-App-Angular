@@ -10,6 +10,7 @@ import {SignUpComponent} from "../components/sign-up/sign-up.component";
 import {HotelPlacesComponent} from '../components/hotel-places/hotel-places.component';
 import {AdminInterfaceComponent} from "../pages/admin-interface/admin-interface.component";
 import {HotelDetailsComponent} from "../pages/admin-interface/hotel-details/hotel-details.component";
+import {RoomDetailsComponent} from "../pages/admin-interface/room-details/room-details.component";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {HotelDetailsComponent} from "../pages/admin-interface/hotel-details/hote
     SignUpComponent,
     HotelPlacesComponent,
     AdminInterfaceComponent,
-    HotelDetailsComponent
+    HotelDetailsComponent,
+    RoomDetailsComponent
   ],
   imports: [
     BrowserModule,
