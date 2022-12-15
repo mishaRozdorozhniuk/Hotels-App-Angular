@@ -22,6 +22,7 @@ export class SignUpComponent implements OnInit {
       this.router.navigate(['hotels'])
       this.registration.signUpUser.isAuth = true
       this.registration.userIsAuth = true
+      this.registration.admin.isAuth = false
       localStorage.setItem('user', JSON.stringify(signUpData))
     } else if (this.registration.admin.displayName === signUpData.displayName
       && this.registration.admin.email === signUpData.email
@@ -29,6 +30,7 @@ export class SignUpComponent implements OnInit {
       this.router.navigate(['hotels'])
       this.registration.admin.isAuth = true
       this.registration.userIsAuth = true
+      this.registration.signUpUser.isAuth = false
       localStorage.setItem('user', JSON.stringify(signUpData))
     } else {
       return false

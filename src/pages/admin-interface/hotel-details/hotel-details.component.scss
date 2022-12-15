@@ -14,7 +14,8 @@
 
 .edit-hotel,
 .save-hotel,
-.delete-hotel {
+.delete-hotel,
+.add-room {
   background-color: #008842;
   padding: 8px 14px;
   border-radius: 5px;
@@ -88,5 +89,38 @@ b {
 }
 
 .delete-hotel {
+  background-color: #c00707;
+}
+
+.add-room-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-room-form input {
+  height: 23px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #7c7c7c;
+  margin: 5px;
+  flex: 2;
+}
+
+.add-room {
+  margin-bottom: 10px;
+  background-color: #ff693b;
+}
+
+.add-room-modal {
+  background-color: #000;
+}
+
+.modal-btn-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 7px 0 0 0;
+}
+
+.add-modal-close {
   background-color: #c00707;
 }

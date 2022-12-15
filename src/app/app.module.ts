@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LoginComponent} from "../components/login/login.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HomeComponent} from "../pages/home/home.component";
 import {HeaderComponent} from "../components/header/header.component";
 import {SignUpComponent} from "../components/sign-up/sign-up.component";
@@ -11,6 +11,9 @@ import {HotelPlacesComponent} from '../components/hotel-places/hotel-places.comp
 import {AdminInterfaceComponent} from "../pages/admin-interface/admin-interface.component";
 import {HotelDetailsComponent} from "../pages/admin-interface/hotel-details/hotel-details.component";
 import {RoomDetailsComponent} from "../pages/admin-interface/room-details/room-details.component";
+import {ModalComponent} from "../components/modal/modal.component";
+import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
+import {FilteredRoomsComponent} from "../pages/filtered-rooms/filtered-rooms.component";
 
 @NgModule({
   declarations: [
@@ -22,12 +25,16 @@ import {RoomDetailsComponent} from "../pages/admin-interface/room-details/room-d
     HotelPlacesComponent,
     AdminInterfaceComponent,
     HotelDetailsComponent,
-    RoomDetailsComponent
+    RoomDetailsComponent,
+    ModalComponent,
+    FilteredRoomsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgMultiSelectDropDownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

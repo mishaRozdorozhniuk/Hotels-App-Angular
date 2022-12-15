@@ -46,6 +46,23 @@
        [ngModelOptions]="{standalone: true}"
        value={{hotel.postalOffice.postCode}}>
 <span *ngIf="!isItemEdit" class="hotels-info"><b>Postal Office Post Code: </b>{{hotel.postalOffice.postCode}}</span>
+
+<button class="add-room" (click)="addRoom()">Add Room</button>
+
+<ng-container *ngIf="addHotelTrigger">
+  <app-modal>
+    <form class="add-room-form" #addNewRoom="ngForm" (ngSubmit)="onSubmit(addNewRoom.value, hotel.id)">
+      <input placeholder="Name" name="name" ngModel type="text">
+      <input placeholder="Number Of Beds" name="numberOfBeds" ngModel type="text">
+      <input placeholder="Price" name="price" ngModel type="text">
+      <div class="modal-btn-wrapper">
+        <button class="add-room add-room-modal" type="submit">Add room</button>
+        <button class="add-room add-modal-close" (click)="closeModal()">Close</button>
+      </div>
+    </form>
+  </app-modal>
+</ng-container>
+
 <button *ngIf="!isItemEdit" class="edit-hotel" (click)="editItem()">Edit Hotel</button>
 <button *ngIf="isItemEdit" class="save-hotel" (click)="saveItem()">Save Hotel</button>
 <button class="show-related-rooms" (click)="handleShowRelatedRooms()">Show related rooms</button>

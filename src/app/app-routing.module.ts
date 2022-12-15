@@ -5,6 +5,7 @@ import {HomeComponent} from "../pages/home/home.component";
 import {SignUpComponent} from "../components/sign-up/sign-up.component";
 import {HotelPlacesComponent} from "../components/hotel-places/hotel-places.component";
 import {AdminInterfaceComponent} from "../pages/admin-interface/admin-interface.component";
+import {FilteredRoomsComponent} from "../pages/filtered-rooms/filtered-rooms.component";
 
 const routes: Routes = [
   {path: '', redirectTo: "hotels", pathMatch: "full"},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'adminInterface', component: AdminInterfaceComponent},
   {path: 'adminInterface/:id', component: HotelPlacesComponent},
   {path: 'hotels', component: HomeComponent},
-  {path: 'hotels/:id', component: HotelPlacesComponent}
+  {path: 'hotels/:id', component: HotelPlacesComponent},
+  {path: 'filteredRooms', component: FilteredRoomsComponent}
 ];
 
 @NgModule({

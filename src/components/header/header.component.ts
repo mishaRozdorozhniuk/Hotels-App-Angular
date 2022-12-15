@@ -19,7 +19,9 @@ export class HeaderComponent implements OnInit {
 
   logOut() {
     localStorage.removeItem('user')
-    this.route.navigate(['signup'])
     this.registration.userIsAuth = false
+    this.registration.admin.isAuth = false
+    this.registration.signUpUser.isAuth = false
+    this.route.navigate(['signup'])
   }
 }

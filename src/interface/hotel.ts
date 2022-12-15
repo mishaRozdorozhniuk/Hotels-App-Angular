@@ -2,7 +2,7 @@ import {IHotelPlace} from "./hotelPlace";
 import {IPostOffice} from "./postalOffice";
 
 export interface IHotel {
-  id?: number,
+  id: number,
   name: string,
   contactNumber: string,
   mail: string,

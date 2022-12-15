@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HotelsService} from "../../services/hotels.service";
 import {ActivatedRoute} from "@angular/router";
-import {IHotelPlace} from "../../interface/hotelPlace";
 
 @Component({
   selector: 'app-hotel-places',
@@ -20,9 +19,5 @@ export class HotelPlacesComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.currentHotel = this.hotelsService.getCurrentHotel(+this.id)
-  }
-
-  deleteRoom(ids: number): IHotelPlace[][] {
-    return this.hotelsService.deleteRoomById(ids)
   }
 }

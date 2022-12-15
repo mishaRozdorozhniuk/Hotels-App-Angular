@@ -1,15 +1,56 @@
 <main class="container">
-  <div class="hotels-wrapper">
-    <div *ngFor="let hotel of hotelService.hotels">
-      <div routerLink="/hotels/{{hotel.id}}" class="hotel">
-        <img class="hotel-img" src='{{hotel.urlAddress}}' alt="hotel img">
-        <p class="hotel-name">{{hotel.name}}</p>
-        <strong>Postal Office:</strong><span class="hotel-info">{{hotel.postalOffice.postCode}}</span>
-        <p class="hotel-info"><strong>Hotel Status:</strong> {{hotel.hotelStatus}}</p>
-        <p class="hotel-info"><strong>Address:</strong> {{hotel.address}}</p>
-        <p class="hotel-info"><strong>Contact Number:</strong> {{hotel.contactNumber}}</p>
-        <p class="hotel-info"><strong>Email:</strong> {{hotel.mail}}</p>
+  <div class="home-wrapper">
+    <aside class="filters">
+      <form [formGroup]="form" class="filters-form">
+        <span class="filter-by-title">Choose place</span>
+        <div class="filter-input-wrapper">
+          <label class="filters-label" for="zagreb">
+            <input
+              class="filters-input"
+              type="checkbox"
+              id="zagreb"
+              name="zagreb"
+              formControlName="zagreb"
+              value="zagreb"/>Zagreb
+          </label>
+        </div>
+        <div class="filter-input-wrapper">
+          <label class="filters-label" for="kyiv">
+            <input
+              class="filters-input"
+              type="checkbox"
+              formControlName="kyiv"
+              id="kyiv"
+              name="kyiv"/>Kyiv
+          </label>
+        </div>
+        <span class="filter-by-title">Choose Number of beds</span>
+        <div class="filter-by-beds">
+          <ng-multiselect-dropdown
+            formControlName="beds"
+            [placeholder]="'Number of beds'"
+            [settings]="dropdownSettings"
+            [data]="dropdownList"
+          >
+          </ng-multiselect-dropdown>
+        </div>
+        <button class="filters-apply" type="submit" (click)="handleButtonClick()">Apply
+          filters
+        </button>
+      </form>
+    </aside>
+    <section class="hotels-wrapper">
+      <div *ngFor="let hotel of hotelService.hotels">
+        <div routerLink="/hotels/{{hotel.id}}" class="hotel">
+          <img class="hotel-img" src='{{hotel.urlAddress}}' alt="hotel img">
+          <p class="hotel-name">{{hotel.name}}</p>
+          <strong>Postal Office:</strong><span class="hotel-info">{{hotel.postalOffice.postCode}}</span>
+          <p class="hotel-info"><strong>Hotel Status:</strong> {{hotel.hotelStatus}}</p>
+          <p class="hotel-info"><strong>Address:</strong> {{hotel.address}}</p>
+          <p class="hotel-info"><strong>Contact Number:</strong> {{hotel.contactNumber}}</p>
+          <p class="hotel-info"><strong>Email:</strong> {{hotel.mail}}</p>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </main>

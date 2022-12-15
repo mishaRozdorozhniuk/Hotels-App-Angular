@@ -66,6 +66,11 @@ b {
 .room-buttons {
   display: flex;
   justify-content: space-between;
+  margin-right: auto;
+}
+
+.room-buttons > button {
+  margin-right: 12px;
 }
 
 .delete-hotel {

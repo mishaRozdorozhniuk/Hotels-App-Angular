@@ -7,11 +7,11 @@
         <a routerLink="/signup">Sign Up</a>
       </div>
     </ng-container>
-    <ng-container *ngIf="registration.signUpUser.isAuth && registration.userIsAuth">
+    <ng-container *ngIf="registration.signUpUser.isAuth">
       <span class="header-username">{{registration.signUpUser.displayName}}</span>
-      <button (click)="logOut()">Log Out</button>
+      <button class="log-out" (click)="logOut()">Log Out</button>
     </ng-container>
-    <ng-container *ngIf="registration.admin.isAuth && registration.userIsAuth">
+    <ng-container *ngIf="registration.admin.isAuth">
       <div class="header-admin">
         <span class="header-username">{{registration.admin.displayName}}</span>
         <a routerLink="/adminInterface" class="admin-interface">Admin Panel</a>

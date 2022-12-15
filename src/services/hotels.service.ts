@@ -5,6 +5,9 @@ import {IHotel} from "../interface/hotel";
   providedIn: 'root'
 })
 export class HotelsService {
+  filteredBedsValue: Array<Object> = []
+  filteredAddressValue: string[] = []
+
   hotels: IHotel[] = [
     {
       id: 1,
@@ -84,7 +87,7 @@ export class HotelsService {
       name: 'Valenti rooms',
       contactNumber: '123-312-435',
       mail: 'somehotel@gmail.com',
-      address: 'Zagreb',
+      address: 'Kyiv',
       hotelStatus: 'Rejected',
       postalOffice: {name: 'TEKST', postCode: 10245},
       hotelOwner: true,
@@ -93,7 +96,7 @@ export class HotelsService {
         {
           id: 7,
           name: 'room1',
-          numberOfBeds: 2,
+          numberOfBeds: 3,
           price: 500,
           isEdit: false,
           url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/338199282.jpg?k=1537a1f8ca399568930f35f73ec6d3b562dbd1fcb8bd3eaad96e432f34fe9f82&o=&hp=1'
@@ -165,7 +168,7 @@ export class HotelsService {
       name: 'Luxury Residence',
       contactNumber: '222-555-666',
       mail: 'somehotel@gmail.com',
-      address: 'Zagreb',
+      address: 'Kyiv',
       hotelStatus: 'Active',
       postalOffice: {name: 'Croatian Post', postCode: 15420},
       hotelOwner: true,
@@ -193,9 +196,5 @@ export class HotelsService {
 
   getCurrentHotel(id: number) {
     return this.hotels.find(hotel => hotel?.id === id)
-  }
-
-  deleteRoomById(id: number) {
-    return this.hotels.map(h => h.hotelPlaces.filter(room => room.id === id))
   }
 }
