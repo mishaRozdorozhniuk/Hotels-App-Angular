@@ -14,7 +14,7 @@
 
 .room-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   justify-items: center;;
 }
 
@@ -26,4 +26,14 @@
 
 .hotel-room span {
   margin: 10px 0 5px 0;
+}
+
+.filter-by-price {
+  border: none;
+  padding: 8px 10px;
+  background-color: #0b68a9;
+  border-radius: 5px;
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
 }

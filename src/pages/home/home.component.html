@@ -34,7 +34,7 @@
           >
           </ng-multiselect-dropdown>
         </div>
-        <button class="filters-apply" type="submit" (click)="handleButtonClick()">Apply
+        <button [disabled]="!form.valid" class="filters-apply" type="submit" (click)="handleButtonClick()">Apply
           filters
         </button>
       </form>

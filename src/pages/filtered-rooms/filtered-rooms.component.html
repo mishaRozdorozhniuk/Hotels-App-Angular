@@ -1,4 +1,5 @@
 <div class="room-wrapper">
+  <button class="filter-by-price" (click)="filterByPrice()">Filter By Price</button>
   <div class="hotel-room" *ngFor="let room of filteredRooms">
     <img class="room-img" src="{{room.url}}" alt="room-img">
     <span><strong>Name:</strong> {{room.name}}</span>
